@@ -1,0 +1,12 @@
+# The main pipeline for my_adb_proj
+resources:
+  pipelines:
+    my_adb_proj_pipeline:
+      name: my_adb_proj_pipeline
+      target: my_adb_proj_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
